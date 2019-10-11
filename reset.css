@@ -1,0 +1,24 @@
+* {
+    box-sizing: border-box;
+}
+
+html,
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+div,
+header,
+footer,
+main,
+section,
+article,
+aside,
+nav {
+    margin: 0;
+    padding: 0;
+}

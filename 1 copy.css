@@ -1,0 +1,179 @@
+/* 使用autoprefixer套件轉檔 */
+/* 創建宇宙背景 漸變灰到黑 */
+
+#universe {
+    background: radial-gradient(#555, #000);
+}
+
+html,
+body {
+    height: 100%;
+    overflow: hidden;
+}
+
+/* 星星動畫改變透明度 */
+@-webkit-keyframes starFlash {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0.3;
+    }
+}
+
+@keyframes starFlash {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0.3;
+    }
+}
+
+#stars {
+    /* 放入星星背景圖片 */
+    background-image: url(./img/STARS.png);
+    height: 100%;
+    background-size: cover;
+    /* 動畫:動畫名稱 動畫秒數 無限循環 動畫順序(星星變暗再變亮) */
+    -webkit-animation: starFlash 3s infinite alternate;
+    animation: starFlash 3s infinite alternate;
+}
+
+/* 太陽動畫改變陰影長度 */
+@-webkit-keyframes sunLight {
+    from {
+        -webkit-box-shadow: 0 0 45px #f5c91a;
+        box-shadow: 0 0 45px #f5c91a;
+    }
+
+    to {
+        -webkit-box-shadow: 0 0 90px #f5c91a;
+        box-shadow: 0 0 90px #f5c91a;
+    }
+}
+
+@keyframes sunLight {
+    from {
+        -webkit-box-shadow: 0 0 45px #f5c91a;
+        box-shadow: 0 0 45px #f5c91a;
+    }
+
+    to {
+        -webkit-box-shadow: 0 0 90px #f5c91a;
+        box-shadow: 0 0 90px #f5c91a;
+    }
+}
+
+
+#sun {
+    /* 繪製太陽 */
+    width: 200px;
+    height: 200px;
+    /* background-color: orange; */
+    background: radial-gradient(#f5c313, #ec7e08);
+    border-radius: 100pX;
+    /* 定義太陽位置在網頁的中央50% */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    /* 調整太陽位置到中心 */
+    margin-top: -100px;
+    margin-left: -100px;
+    /* 利用BOX陰影模擬太陽光， 陰影位移向右0 像下0 陰影長度45PX 顏色 */
+    -webkit-box-shadow: 0 0 45px #f5c91a;
+    box-shadow: 0 0 45px #f5c91a;
+    /* 動畫:動畫名稱 動畫秒數 無限循環 動畫順序(太陽變暗再變亮) */
+    -webkit-animation: sunLight 5s infinite alternate;
+    animation: sunLight 5s infinite alternate;
+}
+
+#earthOrbit {
+    width: 600px;
+    height: 600px;
+
+    border-radius: 100%;
+
+    /* border: 0.5px dotted white; */
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -300px;
+    margin-left: -300px;
+
+    /* 動畫:動畫名稱 動畫秒數 無限循環 動畫順序 */
+    -webkit-animation: spin 30s linear infinite;
+    animation: spin 30s linear infinite;
+
+}
+
+/* 地球和軌道動畫 TRANSFORM 動畫變形效果 旋轉 0~360度 */
+@-webkit-keyframes spin {
+    from {
+        -webkit-transform: rotate(0);
+        transform: rotate(0);
+    }
+
+    to {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes spin {
+    from {
+        -webkit-transform: rotate(0);
+        transform: rotate(0);
+    }
+
+    to {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+#earth {
+    position: absolute;
+    top: 300px;
+
+    margin-top: -40px;
+    margin-left: -40px;
+
+    /* 動畫:動畫名稱 動畫秒數 無限循環 動畫順序 */
+    -webkit-animation: spin 20s linear infinite;
+    animation: spin 20s linear infinite;
+
+}
+
+
+#moonOrbit {
+    width: 120px;
+    height: 120px;
+
+    border-radius: 100%;
+
+    /* border: 0.5px dotted white; */
+
+    position: absolute;
+    top: 50%;
+    margin-top: -60px;
+    margin-left: -60px;
+
+    /* 動畫:動畫名稱 動畫秒數 無限循環 動畫順序 */
+    -webkit-animation: spin 4s linear infinite;
+    animation: spin 4s linear infinite;
+
+
+
+}
+
+#moon {
+    width: 30px;
+    height: 30px;
+    background: radial-gradient(#ddd, #888);
+    border-radius: 100%;
+
+}
